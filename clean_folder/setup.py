@@ -11,8 +11,4 @@ setup(name='clean_folder',
       # clean-folder - команда, яка повинна виконатись в терміналі
       # після '=' пишемо шлях до файлу, де знаходиться функція
       # після ':' пишемо назву функції яку запускати треба
-      classifiers=[
-          'Operating System :: Microsoft :: Windows',
-          'Programming Language :: Python',
-          ]       
       )

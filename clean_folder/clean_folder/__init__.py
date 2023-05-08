@@ -1,1 +1,1 @@
-from .clean import clean_folder
+from .clean import main

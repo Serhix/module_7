@@ -50,6 +50,22 @@ def sort_archives(path: Path):
     list_archives.append(file_name)
     move(path, new_path / file_name)
 
+def main():
+    parser = argparse.ArgumentParser(description='Sorting folder')
+    parser.add_argument('--source', '-s', required=True, help='Source folder') 
+    parser.add_argument('--output', '-o', default = 'Sorted', help='Output folder') 
+    args = vars(parser.parse_args()) 
+    source = args.get("source")
+    path = Path(source)
+    clean_folder(path)
+    print('set of unknown extensions: ',set_unknown_ext)
+    print('set of known extensions: ', set_known_ext)
+    print(list_images)
+    print(list_audio)
+    print(list_video)
+    print(list_documents)
+    print(list_archives)
+
 def clean_folder(path: Path) -> None:
     for element in path.iterdir():
         if element.is_dir():
@@ -81,15 +97,7 @@ def clean_folder(path: Path) -> None:
             else:
                 set_unknown_ext.add(ext)
 
-
-parser = argparse.ArgumentParser(description='Sorting folder')
-parser.add_argument('--source', '-s', required=True, help='Source folder') 
-parser.add_argument('--output', '-o', default = 'Sorted', help='Output folder') 
-
-args = vars(parser.parse_args()) 
-source = args.get("source")
-output = 'Sorted'
-
+    
 EXT_IMAGES = {'.JPEG', '.PNG', '.JPG', '.SVG'}
 EXT_AUDIO = {'.MP3', '.OGG', '.WAV', '.AMR'}
 EXT_VIDEO = {'.AVI', '.MP4', '.MOV', '.MKV'}
@@ -104,14 +112,15 @@ list_video = []
 list_documents = []
 list_archives = []
 
-output_folder = Path(output) #sorted => Path(назва_папки_призначення_sorted(default))   
+output = 'Sorted'
+output_folder = Path(output) #sorted => Path(назва_папки_призначення_sorted(default))
 
-clean_folder(Path(source))    #source => Path(назва_папки_для_робори)
-
-print('set of unknown extensions: ',set_unknown_ext)
-print('set of known extensions: ', set_known_ext)
-print(list_images)
-print(list_audio)
-print(list_video)
-print(list_documents)
-print(list_archives)
+if __name__ == "__main__":
+    main()
+    print('set of unknown extensions: ',set_unknown_ext)
+    print('set of known extensions: ', set_known_ext)
+    print(list_images)
+    print(list_audio)
+    print(list_video)
+    print(list_documents)
+    print(list_archives)

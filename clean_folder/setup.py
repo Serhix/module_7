@@ -9,7 +9,7 @@ setup(name='clean_folder',
       packages=find_namespace_packages(),
       entry_points={'console_scripts': ['clean-folder=clean_folder.clean:clean_folder']},
       # clean-folder - команда, яка повинна виконатись в терміналі
-      # після '=' пишемо шлях до файлу, де знаходиться функція -> hello_world_hsv.main
+      # після '=' пишемо шлях до файлу, де знаходиться функція
       # після ':' пишемо назву функції яку запускати треба
       classifiers=[
           'Operating System :: Microsoft :: Windows',

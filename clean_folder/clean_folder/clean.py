@@ -81,6 +81,7 @@ def clean_folder(path: Path) -> None:
             else:
                 set_unknown_ext.add(ext)
 
+
 parser = argparse.ArgumentParser(description='Sorting folder')
 parser.add_argument('--source', '-s', required=True, help='Source folder') 
 parser.add_argument('--output', '-o', default = 'Sorted', help='Output folder') 
@@ -103,13 +104,14 @@ list_video = []
 list_documents = []
 list_archives = []
 
-output_folder = Path(output) #sorted => Path(назва_папки_призначення_sorted(default))
-clean_folder(Path(source))    #source => Path(назва_папки_для_робори)
+if __name__ == "__main__":
+    output_folder = Path(output) #sorted => Path(назва_папки_призначення_sorted(default))  
+    clean_folder(Path(source))    #source => Path(назва_папки_для_робори)
 
-print('set of unknown extensions: ',set_unknown_ext)
-print('set of known extensions: ', set_known_ext)
-print(list_images)
-print(list_audio)
-print(list_video)
-print(list_documents)
-print(list_archives)
+    print('set of unknown extensions: ',set_unknown_ext)
+    print('set of known extensions: ', set_known_ext)
+    print(list_images)
+    print(list_audio)
+    print(list_video)
+    print(list_documents)
+    print(list_archives)

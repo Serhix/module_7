@@ -1,9 +1,0 @@
-Metadata-Version: 2.1
-Name: clean-folder
-Version: 0.0.1
-Summary: Script for sorting files in a folder
-Author: Serhii Hrabar
-Author-email: strategs89@gmail.com
-License: MIT
-Classifier: Operating System :: Microsoft :: Windows
-Classifier: Programming Language :: Python
